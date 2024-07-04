@@ -1,15 +1,32 @@
 class Jogador
 {
-    public string Cor { get; }
-    public Peao[] Peoes { get; }
-    public int SeisConsecutivos { get; set; }
-    public int CasaInicial { get; }
+    private string cor;
+    private Peao[] peoes;
+    private int seisConsecutivos;
+    private int casaInicial;
+    public string Cor
+    {
+        get { return cor; }
+    }
+    public Peao[] Peoes
+    {
+        get { return peoes; }
+    }
+    public int SeisConsecutivos
+    {
+        get { return seisConsecutivos; }
+        set { seisConsecutivos = value; }
+    }
+    public int CasaInicial
+    {
+        get { return casaInicial; }
+    }
 
     public Jogador(string cor, int casaInicial)
     {
-        Cor = cor;
-        Peoes = new Peao[4] { new Peao(), new Peao(), new Peao(), new Peao() };
+        this.cor = cor;
+        this.peoes = new Peao[4] { new Peao(), new Peao(), new Peao(), new Peao() };
         SeisConsecutivos = 0;
-        CasaInicial = casaInicial;
+        this.casaInicial = casaInicial;
     }
 }
