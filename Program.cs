@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.IO;
 class Peao
 {
@@ -45,7 +45,7 @@ class Jogo
     private Jogador[] jogadores;
     private int jogadorAtual;
     private Random dado;
-    private StreamWriter logWriter;
+    private StreamWriter escreveLog;
     private string[,] casas;
     private int numeroJogadores;
 
@@ -60,7 +60,7 @@ class Jogo
         }
         jogadorAtual = 0;
         dado = new Random();
-        logWriter = new StreamWriter("ludo_log.txt");
+        escreveLog = new StreamWriter("ludo_log.txt");
         casas = new string[15, 15];
     }
     public int TamanhoCasaFinal { get; private set; }
@@ -78,7 +78,7 @@ class Jogo
         }
         Console.Clear();
         ExibirTabuleiro(); // Exibe o tabuleiro final
-        logWriter.Close();
+        escreveLog.Close();
     }
 
     private void ExecutarTurno()
@@ -375,7 +375,7 @@ class Jogo
 
     private void Log(string mensagem)
     {
-        logWriter.WriteLine($"{DateTime.Now}: {mensagem}");
+        escreveLog.WriteLine($"{DateTime.Now}: {mensagem}");
         Console.WriteLine(mensagem);
     }
 
