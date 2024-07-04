@@ -1,9 +1,29 @@
 class Peao
 {
-    public int Posicao { get; set; }
-    public bool EstaEmJogo { get; set; }
-    public bool EstaNaCasaFinal { get; set; }
-    public int DistanciaPercorrida { get; set; }
+    private int posicao;
+    private bool estaEmJogo;
+    private bool estaNaCasaFinal;
+    private int distanciaPercorrida;
+    public int Posicao 
+    { 
+        get { return posicao; } 
+        set { posicao = value; } 
+    }
+    public bool EstaEmJogo 
+    {
+        get { return estaEmJogo; }
+        set { estaEmJogo = value; }
+    }
+    public bool EstaNaCasaFinal 
+    {
+        get { return estaNaCasaFinal; }
+        set { estaNaCasaFinal = value; }
+    }
+    public int DistanciaPercorrida
+    {
+        get { return distanciaPercorrida; }
+        set { distanciaPercorrida = value; }
+    }
 
     public Peao()
     {
