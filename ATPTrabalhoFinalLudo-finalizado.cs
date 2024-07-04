@@ -1,4 +1,4 @@
-﻿using System;
+/*﻿using System;
 using System.IO;
 class Peao
 {
@@ -431,4 +431,4 @@ class Program
 
         Console.WriteLine("Jogo encerrado. Verifique o arquivo de log para detalhes da partida.");
     }
-}
+}*/
