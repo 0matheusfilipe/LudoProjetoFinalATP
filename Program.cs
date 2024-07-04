@@ -37,17 +37,34 @@ using System.IO;
 
 /*class Jogador
 {
-    public string Cor { get; }
-    public Peao[] Peoes { get; }
-    public int SeisConsecutivos { get; set; }
-    public int CasaInicial { get; }
+    private string cor;
+    private Peao[] peoes;
+    private int seisConsecutivos;
+    private int casaInicial;
+    public string Cor
+    {
+        get { return cor; }
+    }
+    public Peao[] Peoes
+    {
+        get { return peoes; }
+    }
+    public int SeisConsecutivos
+    {
+        get { return seisConsecutivos; }
+        set { seisConsecutivos = value; }
+    }
+    public int CasaInicial
+    {
+        get { return casaInicial; }
+    }
 
     public Jogador(string cor, int casaInicial)
     {
-        Cor = cor;
-        Peoes = new Peao[4] { new Peao(), new Peao(), new Peao(), new Peao() };
+        this.cor = cor;
+        this.peoes = new Peao[4] { new Peao(), new Peao(), new Peao(), new Peao() };
         SeisConsecutivos = 0;
-        CasaInicial = casaInicial;
+        this.casaInicial = casaInicial;
     }
 }*/
 
@@ -67,6 +84,8 @@ using System.IO;
     private StreamWriter escreveLog;
     private string[,] casas;
     private int numeroJogadores;
+    private int tamanhoCasaFinal;
+
 
     public Jogo(int numeroJogadores)
     {
@@ -80,9 +99,15 @@ using System.IO;
         jogadorAtual = 0;
         dado = new Random();
         escreveLog = new StreamWriter("ludo_log.txt");
-        casas = new string[15, 15];
+
     }
-    public int TamanhoCasaFinal { get; private set; }
+
+    public int TamanhoCasaFinal 
+    { 
+        get { return TamanhoCasaFinal; } 
+        set { TamanhoCasaFinal = value; } 
+    
+    }
 
     public void Jogar()
     {
