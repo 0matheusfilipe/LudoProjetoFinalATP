@@ -1,30 +1,11 @@
 using System;
 using System.IO;
-/*class Peao
-    private int posicao;
-    private bool estaEmJogo;
-    private bool estaNaCasaFinal;
-    private int distanciaPercorrida;
-    public int Posicao 
-    { 
-        get { return posicao; } 
-        set { posicao = value; } 
-    }
-    public bool EstaEmJogo 
-    {
-        get { return estaEmJogo; }
-        set { estaEmJogo = value; }
-    }
-    public bool EstaNaCasaFinal 
-    {
-        get { return estaNaCasaFinal; }
-        set { estaNaCasaFinal = value; }
-    }
-    public int DistanciaPercorrida
-    {
-        get { return distanciaPercorrida; }
-        set { distanciaPercorrida = value; }
-    }
+/*﻿class Peao
+{
+    public int Posicao { get; set; }
+    public bool EstaEmJogo { get; set; }
+    public bool EstaNaCasaFinal { get; set; }
+    public int DistanciaPercorrida { get; set; }
 
     public Peao()
     {
@@ -33,59 +14,39 @@ using System.IO;
         EstaNaCasaFinal = false;
         DistanciaPercorrida = 0;
     }
-}*/
+}
 
-/*class Jogador
+class Jogador
 {
-    private string cor;
-    private Peao[] peoes;
-    private int seisConsecutivos;
-    private int casaInicial;
-    public string Cor
-    {
-        get { return cor; }
-    }
-    public Peao[] Peoes
-    {
-        get { return peoes; }
-    }
-    public int SeisConsecutivos
-    {
-        get { return seisConsecutivos; }
-        set { seisConsecutivos = value; }
-    }
-    public int CasaInicial
-    {
-        get { return casaInicial; }
-    }
+    public string Cor { get; }
+    public Peao[] Peoes { get; }
+    public int SeisConsecutivos { get; set; }
+    public int CasaInicial { get; }
 
     public Jogador(string cor, int casaInicial)
     {
-        this.cor = cor;
-        this.peoes = new Peao[4] { new Peao(), new Peao(), new Peao(), new Peao() };
+        Cor = cor;
+        Peoes = new Peao[4] { new Peao(), new Peao(), new Peao(), new Peao() };
         SeisConsecutivos = 0;
-        this.casaInicial = casaInicial;
+        CasaInicial = casaInicial;
     }
-}*/
+}
 
-/*class Tabuleiro
+class Tabuleiro
 {
     public const int TamanhoPista = 52;
     public const int TamanhoCasaFinal = 6;
     public static int[] CasasSeguras = { 9, 22, 35, 48 };
     public static int[] CasasIniciais = { 1, 14, 27, 40 };
-}*/
+}
 
-/*class Jogo
+class Jogo
 {
     private Jogador[] jogadores;
     private int jogadorAtual;
     private Random dado;
-    private StreamWriter escreveLog;
-    private string[,] casas;
+    private StreamWriter logWriter;
     private int numeroJogadores;
-    private int tamanhoCasaFinal;
-
 
     public Jogo(int numeroJogadores)
     {
@@ -98,16 +59,9 @@ using System.IO;
         }
         jogadorAtual = 0;
         dado = new Random();
-        escreveLog = new StreamWriter("ludo_log.txt");
-
+        logWriter = new StreamWriter("ludo_log.txt");
     }
-
-    public int TamanhoCasaFinal 
-    { 
-        get { return TamanhoCasaFinal; } 
-        set { TamanhoCasaFinal = value; } 
-    
-    }
+    public int TamanhoCasaFinal { get; private set; }
 
     public void Jogar()
     {
@@ -122,7 +76,7 @@ using System.IO;
         }
         Console.Clear();
         ExibirTabuleiro(); // Exibe o tabuleiro final
-        escreveLog.Close();
+        logWriter.Close();
     }
 
     private void ExecutarTurno()
@@ -419,7 +373,7 @@ using System.IO;
 
     private void Log(string mensagem)
     {
-        escreveLog.WriteLine($"{DateTime.Now}: {mensagem}");
+        logWriter.WriteLine($"{DateTime.Now}: {mensagem}");
         Console.WriteLine(mensagem);
     }
 
