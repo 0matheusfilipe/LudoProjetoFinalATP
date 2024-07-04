@@ -1,6 +1,6 @@
 using System;
 using System.IO;
-class Peao
+/*class Peao
 {
     public int Posicao { get; set; }
     public bool EstaEmJogo { get; set; }
@@ -14,9 +14,9 @@ class Peao
         EstaNaCasaFinal = false;
         DistanciaPercorrida = 0;
     }
-}
+}*/
 
-class Jogador
+/*class Jogador
 {
     public string Cor { get; }
     public Peao[] Peoes { get; }
@@ -30,17 +30,17 @@ class Jogador
         SeisConsecutivos = 0;
         CasaInicial = casaInicial;
     }
-}
+}*/
 
-class Tabuleiro
+/*class Tabuleiro
 {
     public const int TamanhoPista = 52;
     public const int TamanhoCasaFinal = 6;
     public static int[] CasasSeguras = { 9, 22, 35, 48 };
     public static int[] CasasIniciais = { 1, 14, 27, 40 };
-}
+}*/
 
-class Jogo
+/*class Jogo
 {
     private Jogador[] jogadores;
     private int jogadorAtual;
@@ -400,7 +400,7 @@ class Jogo
         }
     }
 
-}
+}*/
 
 class Program
 {
