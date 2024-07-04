@@ -6,6 +6,8 @@ class Jogo
     private StreamWriter escreveLog;
     private string[,] casas;
     private int numeroJogadores;
+    private int tamanhoCasaFinal;
+
 
     public Jogo(int numeroJogadores)
     {
@@ -19,9 +21,15 @@ class Jogo
         jogadorAtual = 0;
         dado = new Random();
         escreveLog = new StreamWriter("ludo_log.txt");
-        casas = new string[15, 15];
+
     }
-    public int TamanhoCasaFinal { get; private set; }
+
+    public int TamanhoCasaFinal 
+    { 
+        get { return TamanhoCasaFinal; } 
+        set { TamanhoCasaFinal = value; } 
+    
+    }
 
     public void Jogar()
     {
